@@ -1,0 +1,26 @@
+{ 
+   "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch gdb-multiarch",
+            "type": "cppdbg",
+            "request": "launch",
+            "miDebuggerPath": "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/12.3 rel1/bin/arm-none-eabi-gdb.exe",
+            "targetArchitecture": "arm",
+            "program": "D:/Projects/stm32/stm32f0/CubeMX/Blinky/build/Blinky.elf",
+              "setupCommands": [
+                {"text": "set remotetimeout 5"},
+                {"text": "target extended-remote :3333"},
+                {"text": "monitor reset halt"},
+                {"text": "file 'D:/Projects/stm32/stm32f0/CubeMX/Blinky/build/Blinky.elf'"},
+                {"text": "load"},
+                {"text": "break main","ignoreFailures": true}
+            ],
+            "launchCompleteCommand": "None",
+            "filterStderr": false,
+            "filterStdout": false,
+            "externalConsole": false,
+            "cwd": "D:/Projects/stm32/stm32f0/CubeMX/Blinky"
+        }
+    ]
+}
